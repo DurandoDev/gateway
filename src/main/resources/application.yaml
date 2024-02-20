@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: backPatient-route
+          uri: http://localhost:8082
+          predicates:
+            - Path=/patients/**
+        - id: front-route
+          uri: http://localhost:8081
+          predicates:
+            - Path=/users/**, /signup/**, /login/**, /logout/**, /listUser/**, /home/**, /css/**
+        - id: backNotes-route
+          uri: http://localhost:8083
+          predicates:
+            - Path=/notes/**

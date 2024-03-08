@@ -6,10 +6,6 @@ spring:
           uri: http://backpatient:8082
           predicates:
             - Path=/patients/**
-        - id: front-route
-          uri: http://front:8081
-          predicates:
-            - Path=/users/**, /signup/**, /login/**, /logout/**, /listUser/**, /home/**, /css/**
         - id: backNotes-route
           uri: http://backnotes:8083
           predicates:
@@ -18,4 +14,3 @@ spring:
           uri: http://backdiabete:8084
           predicates:
             - Path=/diabetes/**
-
